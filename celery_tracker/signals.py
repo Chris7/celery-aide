@@ -11,8 +11,6 @@ def track_task_prerun(sender=None, **kwargs):
     task_args = kwargs.get('args')
     task_kwargs = kwargs.get('kwargs')
     task_queue = sender.request.delivery_info.get('routing_key')
-    print('req is', sender.request, sender.request.delivery_info)
-    print('task queue is', task_queue)
     signature(
       'celery_tracker.tasks.task_update',
       kwargs={
@@ -31,16 +29,11 @@ def track_task_postrun(sender=None, **kwargs):
     task_args = kwargs.get('args')
     task_kwargs = kwargs.get('kwargs')
     task_state = kwargs.get('state')
-    task_extra = {'return': kwargs.get('retval')}
-    print('pr state is', task_state)
-    print('return type is', type(kwargs.get('retval')))
-    print('return is', kwargs.get('retval'))
     signature(
       'celery_tracker.tasks.task_update',
       kwargs={
         'task_id': task_id,
         'task_args': task_args,
-        'task_extra': task_extra,
         'task_kwargs': task_kwargs,
         'task_name': sender.name,
         'task_state': task_state,
