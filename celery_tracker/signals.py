@@ -33,6 +33,8 @@ def track_task_postrun(sender=None, **kwargs):
     task_state = kwargs.get('state')
     task_extra = {'return': kwargs.get('retval')}
     print('pr state is', task_state)
+    print('return type is', type(kwargs.get('retval')))
+    print('return is', kwargs.get('retval'))
     signature(
       'celery_tracker.tasks.task_update',
       kwargs={
