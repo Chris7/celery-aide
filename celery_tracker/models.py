@@ -26,7 +26,7 @@ class CeleryTask(models.Model):
         print('params are', params)
         signature(
             self.name,
-            **kwargs
+            **params
         ).apply_async(queue=self.queue or None)
         self.state = RETRY
         self.save()
