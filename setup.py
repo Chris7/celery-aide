@@ -11,7 +11,10 @@ setup(
     name='django-celery-tracker',
     version='0.1.0',
     packages=find_packages(),
-    install_requires = ['Django>=1.8,<1.10', 'celery'],
+    install_requires = ['celery'],
+    extras_require = {
+        'django': ['Django>=1.8,<1.10'],
+    },
     include_package_data=True,
     description='A Django app which automatically keeps track of celery tasks run in separate apps and allows for task retries and monitoring.',
     url='http://www.github.com/chris7/django-celery-tracker',
