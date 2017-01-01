@@ -7,7 +7,7 @@ from .models import CeleryTask
 class CeleryTaskAdmin(admin.ModelAdmin):
     list_display = ('name', 'task_id', 'state', 'created')
     list_filter = ('name', 'state')
-    readonly_fields = ('name', 'task_id')
+    readonly_fields = ('name', 'task_id', 'created')
     fields = ['name', 'task_id', 'created', 'state', 'queue', '_args', '_kwargs', '_extra']
     actions = ['retry_task']
 
