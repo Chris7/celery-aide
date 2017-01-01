@@ -10,6 +10,7 @@ class CeleryTask(models.Model):
     queue = models.TextField(null=True, blank=True)
     task_id = models.UUIDField()
     state = models.CharField(max_length=25, default=PENDING)
+    created = models.DateTimeField(auto_now_add=True)
     _args = models.TextField(null=True, blank=True)
     _kwargs = models.TextField(null=True, blank=True)
     _extra = models.TextField(null=True, blank=True)
