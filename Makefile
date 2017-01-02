@@ -3,7 +3,7 @@ testenv:
 	pip install -e .
 
 test:
-	coverage run --append --branch --source=celery_tracker `which django-admin.py` test --settings=celery_tracker.test_settings celery_tracker.tests
+	coverage run --append --branch --source=celery_aide `which django-admin.py` test --settings=celery_aide.test_settings celery_aide.tests
 	coverage report
 
 .PHONY: docs

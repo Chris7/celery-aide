@@ -8,7 +8,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-celery-tracker',
+    name='celery-aide',
     version='0.1.0',
     packages=find_packages(),
     install_requires = ['celery'],
@@ -16,9 +16,10 @@ setup(
         'django': ['Django>=1.8,<1.10'],
     },
     include_package_data=True,
-    description='A Django app which automatically keeps track of celery tasks run in separate apps and allows for task retries and monitoring.',
-    url='http://www.github.com/chris7/django-celery-tracker',
-    author='Chris Mitchell <chris.mit7@gmail.com>',
+    description='An app which automatically keeps track of celery tasks run in separate apps and allows for task retries and monitoring through Django.',
+    url='http://www.github.com/chris7/celery-aide',
+    author='Chris Mitchell',
+    author_email='chris.mit7@gmail.com',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
