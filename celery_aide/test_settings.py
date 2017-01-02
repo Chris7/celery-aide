@@ -55,3 +55,4 @@ MIDDLEWARE_CLASSES = []
 
 ROOT_URLCONF = 'celery_aide.urls'
 
+CELERY_ALWAYS_EAGER = True
